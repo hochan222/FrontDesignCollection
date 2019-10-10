@@ -1,0 +1,52 @@
+.sideBox {
+    z-index: 2;
+    position: fixed;
+    margin-top: 350px;
+    
+    left: 14px;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.3) -1px 1px 6px 0px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 0.45px;
+    cursor: pointer;
+    transform: rotate(-270deg);
+    transform-origin: left;
+    padding: 8px;
+    border-radius: 2px 2px 0px 0px;
+    background: rgb(61, 88, 102);
+    width: 49px;
+}
+
+.sideBox-info {
+    z-index: 1;
+    position: fixed;
+    margin-top: 150px;
+    
+    background: rgb(61, 88, 102);
+
+    left: -250px;
+    width: 250px;
+    height: 300px;
+}
+.sideBox-ani {
+    animation: sideBox-anim 2s ease-in-out forwards 0.3s;
+}
+.sideBox-info-ani {
+    animation: sideBoxInfo-anim 2s ease-in-out forwards 0.3s;
+}
+
+@keyframes sideBox-anim {
+    to {
+        left: 264px;
+    }
+}
+
+@keyframes sideBoxInfo-anim {
+    to {
+        left: 0px;
+    }
+}

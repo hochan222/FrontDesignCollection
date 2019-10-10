@@ -1,0 +1,113 @@
+@import '../../../utils';
+
+$svg-values: (
+  (1, 547px, 547px),
+  (2, 494px, 494px, 0.3s),
+  (3, 417px, 417px, 0.3s),
+  (4, 533px, 533px, 0.3s),
+  (5, 363px, 363px, 0.3s),
+  (6, 527px, 527px, 0.3s),
+  (7, 563px, 563px, 0.3s),
+  (8, 382px, 382px, 0.3s),
+);
+
+.letter {
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    z-index: 2;
+    
+    width: 100%;
+    height: 100vh;
+    background-color: #282c34;
+
+    animation: loadbg-anim 1s ease-out forwards 1.5s;
+}
+
+#logo {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+
+    animation: fill 0.5s ease forwards 1s;
+
+    @each $iter, $stroke-dasharray, $stroke-dashoffset, $animation-delay in $svg-values {
+        & path:nth-child(#{$iter}){
+            stroke-dasharray: $stroke-dasharray;
+            stroke-dashoffset: $stroke-dashoffset;
+            animation: line-anim 1s ease forwards $animation-delay;
+        }
+    }
+}
+@include media("<large"){
+    #logo {
+        width: 400px;
+    }
+}
+@include media("<medium"){
+    #logo {
+        width: 200px;
+    }
+}
+
+@mixin svg-animation($stroke-dasharray, $stroke-dashoffset, $animation-delay: 0s) {
+    stroke-dasharray: $stroke-dasharray;
+    stroke-dashoffset: $stroke-dashoffset;
+    animation: line-anim 1s ease forwards $animation-delay;
+}
+
+@keyframes loadbg-anim {
+    to {
+        height: 0;
+    }
+}
+
+@keyframes line-anim {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fill{
+    from{
+        fill: transparent;
+    }
+    to{
+        fill: white;
+        width: 100px;
+        height: 20px;
+        top: 4.5%;
+        left: 27%;
+    }
+}
+@include media("<large") {
+    @keyframes fill{
+        from{
+            fill: transparent;
+        }
+        to{
+            fill: white;
+            width: 100px;
+            height: 20px;
+            top: 4.5%;
+            left: 27%;
+        }
+    }
+}
+@include media("<medium") {
+    @keyframes fill{
+        from{
+            fill: transparent;
+        }
+        to{
+            fill: white;
+            width: 100px;
+            height: 20px;
+            top: 5.8%;
+            left: 20%;
+        }
+    }
+}

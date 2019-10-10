@@ -1,0 +1,87 @@
+@import '../../../utils';
+
+.Main {
+    // #0098ef
+    $deep-blue: #282c34 !default;
+    $blue: #085689 !default;
+    padding: 7vh 0 0 0;
+    text-align: center;
+    background-color: #282c34;
+    // background-image: url("./1.jpg"); 
+    // background-repeat: no-repeat;
+    // background-size: cover;
+
+    header {
+        background-color: $deep-blue;
+        width: 100%;
+        min-height: 60vh;
+        padding: 0 0 33vh 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: calc(10px + 2vmin);
+        color: white;
+        word-break: keep-all;
+
+        .Main-Container{
+            @include media("<medium"){
+                .Main-Text{
+                    font-size: 4vh;
+                }
+                .Main-subText{
+
+                }
+            }
+
+        }
+    }
+    .Main-title {
+        color: $blue;
+    }
+    .Main-subText {
+        font-weight: normal;
+    }
+    .Main-button {
+        border: 1px solid $blue;
+        background-color: $deep-blue;
+        border-radius: 5px;
+        color: $blue;
+        font-size: 1rem;
+        z-index: 0;
+        &:hover {
+            background-color: $blue;
+            border: 1px solid $blue;
+            color: $deep-blue;
+       }
+    }
+    @include media("<medium"){
+        .Main-button {
+            margin-top: 1rem;
+            border: 1px solid $blue;
+            background-color: $deep-blue;
+            border-radius: 5px;
+            color: $blue;
+            font-size: 0.8rem;
+            width: 5rem;
+            z-index: 0;
+
+            &:hover {
+                background-color: $blue;
+                border: 1px solid $blue;
+                color: $deep-blue;
+            }
+        }
+    }
+    .Main-border {
+        position: absolute;
+        bottom: 0px;
+        height: 50px;
+        width: 0px;
+        border: 1px solid white;
+        border-right: 0px;
+    }
+    span {
+        /*color: #282c34;*/
+    }
+}
