@@ -26,6 +26,7 @@
 <img src="./img/Gsidebox.PNG" width="40%">
 <p align="center">좌측에 <strong>SIDEBOX</strong>를 누르면 animation linear 으로 <strong>SIDEBOX</strong>가 나옵니다.</p>
 </br>
+
 #### Timer
 </br>
 
@@ -33,6 +34,7 @@
 <img src="./img/AbsoluteBottomTimer.PNG">
 <p align="center"><strong>position: absolute, left: 0, bottom:0</strong>로 브라우저 크기가 변해도 항상 하단에 고정되어있는 Timer 입니다. Scroll하면 Timer도 올라갑니다.</p>
 </br>
+
 #### Footer
 </br>
 
